@@ -1,10 +1,10 @@
 {
     "name": "denwebdev/google-oath2",
-    "description": "Google OAuth2 Provider for Laravel Socialite",
+    "description": "Fork by Google OAuth2 Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [{
-        "name": "Brian Faust",
-        "email": "hello@brianfaust.de"
+        "name": "Denis Sergeev",
+        "email": "denwebdev@yandex.ru.de"
     }],
     "require": {
         "php": "^5.6 || ^7.0",
@@ -12,7 +12,7 @@
     },
     "repositories": [{
             "type": "vcs",
-            "url": "https://github.com/denwebdev/Google-Plus"
+            "url": "https://github.com/denwebdev/google-oath2.git"
          
     }],
     "autoload": {
