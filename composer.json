@@ -10,6 +10,11 @@
         "php": "^5.6 || ^7.0",
         "socialiteproviders/manager": "~2.0 || ~3.0"
     },
+    "repositories": [ {
+            "type": "vcs",
+            "url": "https://github.com/denwebdev/Google-Plus"
+         }
+    }],
     "autoload": {
         "psr-4": {
             "SocialiteProviders\\Google\\": ""
