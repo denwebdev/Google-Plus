@@ -18,8 +18,9 @@ class Provider extends AbstractProvider implements ProviderInterface
      * {@inheritdoc}
      */
     protected $scopes = [
-        'profile',
-        'email',
+        'https://www.googleapis.com/auth/plus.me',
+        'https://www.googleapis.com/auth/userinfo.email',
+        'https://www.googleapis.com/auth/userinfo.profile',
     ];
 
     /**
@@ -51,11 +52,10 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function getUserByToken($token)
     {
         $response = $this->getHttpClient()->get(
-            'https://people.googleapis.com/v1/people/me', [
+            'https://www.googleapis.com/oauth2/v3/userinfo', [
             'headers' => [
                 'Authorization' => 'Bearer '.$token,
             ],
-            'query'   => ['personFields' => 'emailAddresses,names,photos'],
         ]);
 
         return json_decode($response->getBody()->getContents(), true);
@@ -67,16 +67,11 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'id' => $user['names'][0]['metadata']['source']['id'],
-            'nickname' => Arr::get($user, 'names.0.displayName', NULL),
-            'name' => Arr::get($user, 'names.0.displayName', NULL),
-            'email' => Arr::get($user, 'emailAddresses.0.value', NULL),
-            'avatar' =>  ( 
-                    Arr::get($user, 'photos.0.metadata.source.type', NULL) === 'PROFILE'
-                    AND Arr::get($user, 'photos.0.metadata.primary', NULL) === true
-                ) 
-                ? Arr::get($user, 'photos.0.url', NULL) 
-                : NULL,
+            'id' => $user['sub'],
+            'nickname' => null,
+            'name' => $user['name'],
+            'email' => null,
+            'avatar' => $user['picture'],
         ]);
     }
 
