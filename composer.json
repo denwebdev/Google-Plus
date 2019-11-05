@@ -11,9 +11,9 @@
         "socialiteproviders/manager": "~2.0 || ~3.0"
     },
     "repositories": [{
-            "type": "vcs",
-            "url": "https://github.com/denwebdev/google-oath2.git"
-         
+        "type": "vcs",
+        "url": "https://github.com/denwebdev/google-oath2.git"
+
     }],
     "autoload": {
         "psr-4": {
