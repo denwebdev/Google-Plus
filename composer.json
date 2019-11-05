@@ -1,5 +1,5 @@
 {
-    "name": "socialiteproviders/google",
+    "name": "denwebdev/google-oath2",
     "description": "Google OAuth2 Provider for Laravel Socialite",
     "license": "MIT",
     "authors": [{
@@ -10,10 +10,10 @@
         "php": "^5.6 || ^7.0",
         "socialiteproviders/manager": "~2.0 || ~3.0"
     },
-    "repositories": [ {
+    "repositories": [{
             "type": "vcs",
             "url": "https://github.com/denwebdev/Google-Plus"
-         }
+         
     }],
     "autoload": {
         "psr-4": {
