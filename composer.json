@@ -1,6 +1,6 @@
 {
-    "name": "denwebdev/google-oath2",
-    "description": "Fork by Google OAuth2 Provider for Laravel Socialite",
+    "name": "socialiteproviders/google",
+    "description": "Fork by Google OAuth2 Provider for Laravel Socialite for replace google plus to simple google",
     "license": "MIT",
     "authors": [{
         "name": "Denis Sergeev",
