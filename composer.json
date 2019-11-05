@@ -4,7 +4,7 @@
     "license": "MIT",
     "authors": [{
         "name": "Denis Sergeev",
-        "email": "denwebdev@yandex.ru.de"
+        "email": "denwebdev@yandex.ru"
     }],
     "require": {
         "php": "^5.6 || ^7.0",
